@@ -11,6 +11,6 @@ export class LandingPage {
   constructor(private readonly router: Router) { }
 
   handleLogin(): void {
-    this.router.navigateByUrl("/nature");
+    this.router.navigateByUrl("/wilderness");
   }
 }
