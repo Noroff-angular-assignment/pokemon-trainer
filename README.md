@@ -2,11 +2,10 @@
 "Pokemon-Trainer" is an assignment from the Accelerated Learning course in Fullstack .Net developer (Noroff). The Pokemon Trainer is an application that utilize Angular, TailwindCSS and API's. In other words, the project is a Single Page Application focus on the front-end with Angular, how protect routes with authentication, Context API and working in team on Git.  
 
 ## Description
-!!!!MISSING!!!! 
-
+This project is an Pokémon Trainer application which contain three pages. If not already logged in, the first page is for the Trainer to enter name and login to the site. Without enter trainer name, the reset of the site will be inaccessible. the second page is an Pokémon catalogue page which utilizes the [Poké API](https://pokeapi.co/). In the catalogue, the trainer can search and filter through the pokémons and catch them. The third page is the trainer's Poké Index and inventory, where the trainer can inspect all the caught Pokémons. 
 
 ## Disclaimer
-As the application have only focus on the front-end, the application doesn't have the back-end like database to manage API. Therefore, the application will focus on the handle and check with username, where utilize the browser's storage from local to session. The same for any environment variables is not generated using any secure algorithm and the user is not given an authentication token.
+As the application have only focus on the front-end, the application doesn't have the back-end like database to manage API. Therefore, the application focus on the handle and check with username, where utilize the browser's storage from local to session. The same for any environment variables is not generated using any secure algorithm and the user is not given an authentication token.
 ## Components tree
 To begin the implementation of the application, there have been developed a component tree to show the pages and feature components.The component tree can be found in the ComponentTree_PokeTrainer.pdf. As the component tree is created before any code is written and will not be updated, as it will be part of the overall grade, the application may vary some degree from the component tree.
 ## Status of the Project
@@ -62,11 +61,11 @@ The protocol of merging a feature branch into main branch should be:
 Feature branches is to be branched out from the master branch and to be working on some content for the application. Feature branches naming should be structured as \<category>/description-in-kebab-case>.
 
 The categories:
-- features
-- docs
-- bugfix
-- hotfix
-- test
+- Features
+- Docs
+- Bugfix
+- Hotfix
+- Test
 
 ## Commits
 This means the commit message should be structured as follows:
