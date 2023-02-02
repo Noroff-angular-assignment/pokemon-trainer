@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CataloguePage } from './pages/catalogue/catalogue.page';
 import { LandingPage } from './pages/landing/landing.page';
 import { TrainerPage } from './pages/trainer/trainer.page';
 import { AuthGuard } from './guards/auth.guard';
+import { WildernessPage } from './pages/wilderness/wilderness.page';
 
 const routes: Routes = [
   {
@@ -16,12 +16,12 @@ const routes: Routes = [
     component: LandingPage,
   },
   {
-    path: 'nature',
-    component: CataloguePage,
+    path: 'wilderness',
+    component: WildernessPage,
     canActivate: [AuthGuard]
   },
   {
-    path: 'pokedex',
+    path: 'trainer',
     component: TrainerPage,
     canActivate: [AuthGuard]
   },
