@@ -8,14 +8,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  constructor() {}
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+      
   }
-
-  get user(): User | undefined { 
-    return this.userService.user; 
-  }
-
-  constructor(private readonly userService: UserService) { }
 
 }
