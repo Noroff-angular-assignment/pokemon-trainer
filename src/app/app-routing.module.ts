@@ -6,7 +6,12 @@ import { TrainerPage } from './pages/trainer/trainer.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
+    pathMatch: "full",
+    redirectTo: "/landing"
+  },
+  {
+    path: 'landing',
     component: LandingPage,
   },
   {
@@ -20,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
