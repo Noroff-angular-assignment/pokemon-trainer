@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LandingPage } from './pages/landing/landing.page';
+import { TrainerPage } from './pages/trainer/trainer.page';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPage
+    LandingPage,
+    TrainerPage
   ],
   imports: [
     BrowserModule
