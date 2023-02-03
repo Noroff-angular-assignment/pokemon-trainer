@@ -3,10 +3,10 @@
   <span class="font-bold">Pokémon Trainer</span>
   <ng-container *ngIf="user !== undefined">
     <ul class="flex">
-      <li class="px-4">
+      <li *ngIf="route !== '/wilderness'" class="px-4">
         <a routerLink="/wilderness">Wilderness</a>
       </li>
-      <li class="px-4">
+      <li *ngIf="route !== '/trainer'" class="px-4">
         <a routerLink="/trainer">Trainer</a>
       </li>
     </ul>
