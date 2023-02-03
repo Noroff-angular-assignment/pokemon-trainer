@@ -9,6 +9,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { WildernessPage } from './pages/wilderness/wilderness.page';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { WildernessPage } from './pages/wilderness/wilderness.page';
     WildernessPage,
     LoginFormComponent,
     NavbarComponent,
+    PokemonListComponent,
+    PokemonListItemComponent,
   ],
   imports: [
     BrowserModule,
