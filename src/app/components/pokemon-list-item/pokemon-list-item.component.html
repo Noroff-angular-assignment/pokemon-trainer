@@ -1,9 +1,10 @@
-<li *ngIf="pokemon" class="mb-4 shadow">
-<section class="p-3">
+<li *ngIf="pokemon" class="mb shadow rounded-2xl">
+<section class="p-2">
     <span *ngIf="PokePicture.BaseURL"></span>
-    <img src={{pokemon.img}} class="block w-30" [alt]="pokemon.id" />
+    <img src={{pokemon.img}} class="block w-max" [alt]="pokemon.id" />
 </section>
-<section class="p-4">
-    <p class="text-justify text-lg">#{{pokemon.id}} {{pokemon.name}}</p>
+<section class="p-2">
+    <p>#{{pokemon.id}}</p>
+    <p>{{pokemon.name}}</p>
 </section>
 </li>
