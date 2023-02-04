@@ -12,6 +12,7 @@ import { WildernessPage } from './pages/wilderness/wilderness.page';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { FetchActionsComponent } from './components/fetch-actions/fetch-actions.component';
+import { CatchButtonComponent } from './components/catch-button/catch-button.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FetchActionsComponent } from './components/fetch-actions/fetch-actions.
     PokemonListComponent,
     PokemonListItemComponent,
     FetchActionsComponent,
+    CatchButtonComponent,
   ],
   imports: [
     BrowserModule,
