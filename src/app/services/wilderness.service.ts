@@ -30,6 +30,10 @@ export class WildernessService {
   constructor(private readonly http: HttpClient) {}
 
   public findAllPokemons(): void {
+    console.log("TEST" + this._pokemon.length);
+    if (this._pokemon.length > 0 || this._loading) {
+      return;
+    }
     this._loading = true;
     this.http
       .get<Pokemon[]>(`${APIPokemon}pokemon?limit=1008&offset=0`)
