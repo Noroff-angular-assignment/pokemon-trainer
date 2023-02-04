@@ -35,7 +35,7 @@ export class WildernessService {
     }
     this._loading = true;
     this.http
-      .get<Pokemon[]>(`${APIPokemon}pokemon?limit=1008&offset=0`)
+      .get<Pokemon[]>(`${APIPokemon}pokemon?limit=20&offset=0`)
       .pipe(
         finalize(() => {
           this._loading = false;

@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { WildernessPage } from './pages/wilderness/wilderness.page';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
+import { FetchActionsComponent } from './components/fetch-actions/fetch-actions.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon
     NavbarComponent,
     PokemonListComponent,
     PokemonListItemComponent,
+    FetchActionsComponent,
   ],
   imports: [
     BrowserModule,
