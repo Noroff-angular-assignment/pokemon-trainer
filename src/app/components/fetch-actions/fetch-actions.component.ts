@@ -11,7 +11,11 @@ export class FetchActionsComponent {
   constructor(
     ) {   }
 
-    public fetchSubmit(): void {
+    onPrevClick(): void {
+
+    }
+
+    onNextClick(): void {
 
     }
 
