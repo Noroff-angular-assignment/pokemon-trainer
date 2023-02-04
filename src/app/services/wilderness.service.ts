@@ -30,6 +30,9 @@ export class WildernessService {
   constructor(private readonly http: HttpClient) {}
 
   public findAllPokemons(): void {
+    if (this._pokemon.length > 0 || this._loading) {
+      return;
+    }
     this._loading = true;
     this.http
       .get<Pokemon[]>(`${APIPokemon}pokemon?limit=1008&offset=0`)
@@ -41,19 +44,20 @@ export class WildernessService {
       .subscribe({
         next: (pokemon: any) => {
           this._pokemon = pokemon.results;
-          this.getImgURL();
+          this.fillModel();
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
         },
       });
   }
-  private getImgURL(): void {
+  private fillModel(): void {
     this._pokemon.forEach((pokemon: Pokemon) => {
       const SplitURL = pokemon.url.split('/');
-      pokemon.id = Number(SplitURL[SplitURL.length-2]);
+      pokemon.id = Number(SplitURL[SplitURL.length - 2]);
       pokemon.img = `${PokePicture.BaseURL}${pokemon.id}.png`;
-  })
+      pokemon.name =
+        pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    });
+  }
 }
-}
-
