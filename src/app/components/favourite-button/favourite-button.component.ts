@@ -11,12 +11,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FavouriteButtonComponent {
 
+  public loading: boolean = false;
   public isFavourite: boolean = false;
   @Input() pokemonId: string = "";
-
-  get loading(): boolean {
-    return this.favouriteService.loading;
-  }
 
   constructor(
     private trainerService: UserService,
@@ -30,9 +27,11 @@ export class FavouriteButtonComponent {
 
 
   onFavouriteClick(): void {
+    this.loading = true
     this.favouriteService.toggleFavourite(this.pokemonId)
       .subscribe({
         next: (user: User) => {
+          this.loading = false
           this.isFavourite = this.trainerService.inFavourites(this.pokemonId);
         },
         error: (error: HttpErrorResponse) => {
