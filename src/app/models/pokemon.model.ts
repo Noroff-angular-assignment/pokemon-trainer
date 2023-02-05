@@ -1,7 +1,7 @@
 export interface Pokemon {
+  id: string;
   name: string;
   url: string;
-  id: number;
   img: string;
 }
 
