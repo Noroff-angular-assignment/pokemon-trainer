@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from '../services/user.service';
+import { TrainerService } from '../services/trainer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private readonly router: Router,
-    private readonly userService: UserService
+    private readonly trainerService: TrainerService
   ) {}
 
   canActivate(
@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
      | Promise<boolean | UrlTree>
      | boolean
      | UrlTree {
-    if (this.userService.user) {
+    if (this.trainerService.trainer) {
       return true;
     } else {
       this.router.navigateByUrl("/landing");

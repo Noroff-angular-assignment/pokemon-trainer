@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+import { Trainer } from 'src/app/models/trainer.model';
 import { FavouriteService } from 'src/app/services/favourite.service';
-import { UserService } from 'src/app/services/user.service';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-favourite-button',
@@ -16,7 +16,7 @@ export class FavouriteButtonComponent {
   @Input() pokemonId: string = "";
 
   constructor(
-    private trainerService: UserService,
+    private trainerService: TrainerService,
     private readonly favouriteService: FavouriteService
   ) {}
 
@@ -30,7 +30,7 @@ export class FavouriteButtonComponent {
     this.loading = true
     this.favouriteService.toggleFavourite(this.pokemonId)
       .subscribe({
-        next: (user: User) => {
+        next: (trainer: Trainer) => {
           this.loading = false
           this.isFavourite = this.trainerService.inFavourites(this.pokemonId);
         },

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './services/user.service';
+import { TrainerService } from './services/trainer.service';
 import { WildernessService } from './services/wilderness.service';
 
 @Component({
@@ -9,11 +9,11 @@ import { WildernessService } from './services/wilderness.service';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private readonly userService: UserService,
+    private readonly trainerService: TrainerService,
     private readonly wildernessService: WildernessService
   ) {}
   ngOnInit(): void {
-    if (this.userService.user) {
+    if (this.trainerService.trainer) {
       this.wildernessService.findAllPokemons();
     }
   }

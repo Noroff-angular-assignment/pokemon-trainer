@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
-import { UserService } from 'src/app/services/user.service';
+import { Trainer } from 'src/app/models/trainer.model';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  get user(): User | undefined {
-    return this.userService.user;
+  get trainer(): Trainer | undefined {
+    return this.trainerService.trainer;
   }
 
   get route(): string | undefined {
@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   }
   
   constructor(
-    private readonly userService: UserService,
+    private readonly trainerService: TrainerService,
     private readonly router: Router,
   ) {}
 

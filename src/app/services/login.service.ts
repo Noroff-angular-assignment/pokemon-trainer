@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, of, switchMap } from 'rxjs';
-import { User } from '../models/user.model';
+import { Trainer } from '../models/trainer.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -14,29 +14,29 @@ export class LoginService {
   //Dependency injection
   constructor(private readonly http: HttpClient) { }
 
-  public login(username: string): Observable<User> {
-    return this.checkUsername(username)
+  public login(trainername: string): Observable<Trainer> {
+    return this.checkTrainername(trainername)
     .pipe(
-      switchMap((user: User | undefined) => {
-        if(user === undefined) {
-          return this.createUser(username);
+      switchMap((trainer: Trainer | undefined) => {
+        if(trainer === undefined) {
+          return this.createTrainer(trainername);
         }
-        return of(user);
+        return of(trainer);
       })
     )
   }
 
-  private checkUsername(username: string): Observable<User | undefined> {
-    return this.http.get<User[]>(`${APITrainers}?username=${username}`)
+  private checkTrainername(trainername: string): Observable<Trainer | undefined> {
+    return this.http.get<Trainer[]>(`${APITrainers}?trainername=${trainername}`)
     .pipe(
-      map((response: User[]) => response.pop())
+      map((response: Trainer[]) => response.pop())
     )
   }
 
-  private createUser(username: string): Observable<User> {
+  private createTrainer(trainername: string): Observable<Trainer> {
     
-    const user = {
-      username,
+    const trainer = {
+      trainername,
       favourites: []
     };
 
@@ -45,7 +45,7 @@ export class LoginService {
       "x-api-key": APIKey
     })
 
-    return this.http.post<User>(APITrainers, user, { headers })
+    return this.http.post<Trainer>(APITrainers, trainer, { headers })
 
   }
 }

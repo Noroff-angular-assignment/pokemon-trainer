@@ -1,7 +1,7 @@
 <nav
   class="bg-red-700 flex justify-between items-center p-8 sticky top-0 w-full z-50">
   <span class="font-bold">Pokémon Trainer</span>
-  <ng-container *ngIf="user !== undefined">
+  <ng-container *ngIf="trainer !== undefined">
     <ul class="flex">
       <li *ngIf="route !== '/wilderness'" class="px-4">
         <a routerLink="/wilderness">Wilderness</a>

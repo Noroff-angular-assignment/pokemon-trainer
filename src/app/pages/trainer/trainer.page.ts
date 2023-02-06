@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
-import { User } from 'src/app/models/user.model';
-import { UserService } from 'src/app/services/user.service';
+import { Trainer } from 'src/app/models/trainer.model';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -10,20 +10,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class TrainerPage {
 
-  get user(): User | undefined {
-    return this.trainerService.user
+  get trainer(): Trainer | undefined {
+    return this.trainerService.trainer
   }
 
   get favourites(): Pokemon[] {
-    if(this.trainerService.user) {
-      return this.trainerService.user.favourites
+    if(this.trainerService.trainer) {
+      return this.trainerService.trainer.favourites
     }
 
     return []
   }
 
   constructor(
-    private trainerService: UserService
+    private trainerService: TrainerService
   ){
 
   }

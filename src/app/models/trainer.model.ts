@@ -1,7 +1,7 @@
 import { Pokemon } from "./pokemon.model";
 
-export interface User {
+export interface Trainer {
     id: number;
-    username: string;
+    trainername: string;
     favourites: Pokemon[];
 }
