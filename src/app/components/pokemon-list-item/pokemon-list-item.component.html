@@ -1,15 +1,13 @@
-<li *ngIf="pokemon" class="mb rounded-2xl border">
-  <section class="p-2">
+<li *ngIf="pokemon" class="mb shadow rounded-2xl relative">
+<section class="p-2">
     <span *ngIf="PokePicture.BaseURL"></span>
-    <img src="{{ pokemon.img }}" class="block w-max" [alt]="pokemon.id" />
-  </section>
-  <div class="grid grid-cols-2 items-center">
-    <div class="p-2">
-      <p>#{{ pokemon.id }}</p>
-      <p>{{ pokemon.name }}</p>
+    <img src={{pokemon.img}} class="block w-max" [alt]="pokemon.id" />
+</section>
+<section class="p-2">
+    <div>
+    <p>#{{pokemon.id}}</p>
+    <p>{{pokemon.name}}</p>
     </div>
-    <div class="right-1">
-      <app-catch-button></app-catch-button>
-    </div>
-  </div>
+    <app-favourite-button [pokemonId]="pokemon.id"></app-favourite-button>
+</section>
 </li>

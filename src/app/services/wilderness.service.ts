@@ -51,10 +51,15 @@ export class WildernessService {
         },
       });
   }
+
+  public pokemonById(id: string): Pokemon | undefined {
+    return this._pokemon.find((pokemon: Pokemon) => pokemon.id === id)
+  }
+
   private fillModel(): void {
     this._pokemon.forEach((pokemon: Pokemon) => {
       const SplitURL = pokemon.url.split('/');
-      pokemon.id = Number(SplitURL[SplitURL.length - 2]);
+      pokemon.id = SplitURL[SplitURL.length - 2];
       pokemon.img = `${PokePicture.BaseURL}${pokemon.id}.png`;
       pokemon.name =
         pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);

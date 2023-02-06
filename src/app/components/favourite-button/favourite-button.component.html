@@ -1,0 +1,22 @@
+<aside class="absolute bottom-3 right-3  border-slate-400">
+    <button (click)="onFavouriteClick()">
+
+        <ng-container *ngIf="!loading; else spinner">
+            <ng-container *ngIf="isFavourite; then favourite else notFavourite" class="bottom-0 align-text-bottom text-center"></ng-container>
+
+                <ng-template #favourite>
+                    <img class="img-responsive animate-bounce w-8 h-8" src="/assets/pokeclosed.png">
+                </ng-template>
+
+                <ng-template #notFavourite> 
+                    <img class="img-responsive w-8 h-8" src="/assets/pokeopen.png">
+                </ng-template>
+
+        </ng-container>
+
+        <ng-template #spinner>
+            <span class="material-icons animate-spin bottom-0 w-8 h-8">refresh</span>
+        </ng-template>
+
+    </button>
+</aside>

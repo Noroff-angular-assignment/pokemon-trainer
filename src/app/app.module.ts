@@ -12,7 +12,7 @@ import { WildernessPage } from './pages/wilderness/wilderness.page';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { FetchActionsComponent } from './components/fetch-actions/fetch-actions.component';
-import { CatchButtonComponent } from './components/catch-button/catch-button.component';
+import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { CatchButtonComponent } from './components/catch-button/catch-button.com
     PokemonListComponent,
     PokemonListItemComponent,
     FetchActionsComponent,
-    CatchButtonComponent,
+    FavouriteButtonComponent,
   ],
   imports: [
     BrowserModule,
