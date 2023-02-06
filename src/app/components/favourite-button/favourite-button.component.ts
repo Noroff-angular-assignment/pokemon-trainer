@@ -24,8 +24,6 @@ export class FavouriteButtonComponent {
     this.isFavourite = this.trainerService.inFavourites(this.pokemonId);
   }
 
-
-
   onFavouriteClick(): void {
     this.loading = true
     this.favouriteService.toggleFavourite(this.pokemonId)

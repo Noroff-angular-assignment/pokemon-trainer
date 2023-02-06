@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'landing',
-    component: LandingPage,
+    component: LandingPage
   },
   {
     path: 'wilderness',
