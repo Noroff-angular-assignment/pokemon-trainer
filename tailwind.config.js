@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{ts,html}"
   ],
   theme: {
+    fontFamily: {
+      pokefont: [ "pokefont" ],
+    },
     extend: {},
   },
   plugins: [],

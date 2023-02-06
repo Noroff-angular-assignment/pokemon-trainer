@@ -1,8 +1,22 @@
-<form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
-    <fieldset class="mb-3">
-        <label for="trainername" class="block">Trainername</label>
-        <input type="text" ngModel #trainername="ngModel" name="trainername" id="trainername" class="border border-slate-300 p-8" placeholder="WHATCHUWAN"/>
-    </fieldset>
+<main class="text-center">
 
-    <button type="submit" class="bg-blend-color">Login</button>
-</form>
+    <ng-container *ngIf="!loading; else spinner">
+            
+        <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)" class="center">
+        
+            <fieldset class="mb-3">
+            <label for="username" class="rounded"></label>
+            <input type="text" ngModel #username="ngModel" name="username" id="username"
+            class="rounded border border-slate-800 bg-blue-100 hover:bg-blue-200 active::bg-blue-300 p-5 text-center" placeholder="- Trainer Sign-in -"/>
+            <button type="submit" class="bg-blue-300 hover:bg-yellow-400 rounded-2xl p-3 flex-auto mx-1">Sign-in</button>
+        </fieldset>
+        
+        
+    </form>
+
+</ng-container>
+
+<ng-template #spinner>
+    <span class="material-icons animate-spin bottom-0 w-8 h-8 align-middle text-yellow-400">.</span>
+</ng-template>
+</main>

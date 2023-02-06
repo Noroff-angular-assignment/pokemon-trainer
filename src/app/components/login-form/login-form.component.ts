@@ -11,6 +11,8 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class LoginFormComponent {
 
+  public loading: boolean = false;
+
   @Output() login : EventEmitter<void> = new EventEmitter();
 
   constructor(
@@ -19,12 +21,13 @@ export class LoginFormComponent {
     ) {   }
 
     public loginSubmit(loginForm: NgForm): void {
-
+      this.loading = true
       const { trainername } = loginForm.value;
 
       this.loginService.login(trainername)
         .subscribe({
           next: (trainer: Trainer) => {
+            this.loading = false
             this.trainerService.trainer = trainer;
             this.login.emit();
           },
