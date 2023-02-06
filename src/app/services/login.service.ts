@@ -46,6 +46,5 @@ export class LoginService {
     })
 
     return this.http.post<Trainer>(APITrainers, trainer, { headers })
-
   }
 }
