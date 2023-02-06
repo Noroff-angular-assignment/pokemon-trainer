@@ -24,6 +24,7 @@ export class WildernessPage implements OnInit {
   constructor(private readonly wildernessService: WildernessService) { }
 
   ngOnInit(): void {
+    //run the findAllPokemons function -> fetch all pokemons from API
     this.wildernessService.findAllPokemons();
   }
 }

@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 const { APITrainers, APIKey } = environment;
 
+//this services is for handling the login of the trainer
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,8 @@ export class LoginService {
   //Dependency injection
   constructor(private readonly http: HttpClient) { }
 
+  //login and get the API data if trainer is already in the API database
+  //otherwise create a new trainer and login
   public login(trainername: string): Observable<Trainer> {
     return this.checkTrainername(trainername)
     .pipe(
@@ -26,6 +29,8 @@ export class LoginService {
     )
   }
 
+  //fetching on the API url with the given trainer name.
+  // it will pop the trainer if it exists or pop empty array if it doesn't
   private checkTrainername(trainername: string): Observable<Trainer | undefined> {
     return this.http.get<Trainer[]>(`${APITrainers}?trainername=${trainername}`)
     .pipe(
@@ -33,8 +38,9 @@ export class LoginService {
     )
   }
 
+  //create an instance on the API database based on the given trainer name
   private createTrainer(trainername: string): Observable<Trainer> {
-    
+    // initialize the trainer on the API database
     const trainer = {
       trainername,
       favourites: []

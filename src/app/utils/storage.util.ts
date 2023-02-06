@@ -1,3 +1,7 @@
+
+// the utility functions for accessing the browser storage - trainer info
+// the key is the id of the trainer, the values is name, favourite pokemon and id
+// the key value is defined in the /src/app/enums/storage-keys.enum.ts
 export class StorageUtil {
 
     public static storageSave<T>(key: string, value: T): void{

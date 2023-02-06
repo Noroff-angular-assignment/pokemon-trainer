@@ -11,6 +11,7 @@ export class LandingPage {
   constructor(private readonly router: Router) { }
 
   handleLogin(): void {
+    // when login -> redirect to wilderness
     this.router.navigateByUrl("/wilderness");
   }
 }
