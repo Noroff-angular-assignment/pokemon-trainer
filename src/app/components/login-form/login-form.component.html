@@ -4,7 +4,7 @@
     <ng-container *ngIf="!loading; else spinner">    
         <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
             <fieldset class="mb-3">
-                <input class="rounded border border-yellow-400 bg-blue-100 hover:bg-blue-200 active::bg-blue-300 p-5 text-center font-pokefont text-yellow-400"
+                <input class="rounded border border-yellow-400 bg-blue-100 hover:bg-blue-200 active::bg-blue-300 p-5 text-center font-pokefont text-blue-700"
                 type="text" ngModel #trainername="ngModel" name="trainername" id="trainername" placeholder="Insert trainer name"/>
             </fieldset>
             <button type="submit" class="bg-blue-300 hover:bg-yellow-400 rounded-2xl p-3 flex-auto mx-1 font-pokefont text-yellow-400 text-3xl hover:text-blue-300">LETS GO!</button>
@@ -12,7 +12,7 @@
     </ng-container>
 
     <ng-template #spinner>
-        <span class="animate-spin bottom-0 w-8 h-8 align-middle text-yellow-400 text-3xl">.</span>
+        <span class="animate-spin bottom-0 w-8 h-8 align-middle text-blue-900 text-xl">.</span>
     </ng-template>
 
     <ng-container *ngIf="failedLogin">
