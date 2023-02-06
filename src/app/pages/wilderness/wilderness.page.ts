@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon.model';
-import { WildernessService } from 'src/app/services/wilderness.service';
 
+import { WildernessService } from 'src/app/services/wilderness.service';
+import { Pokemon } from 'src/app/models/pokemon.model';
+
+// Returns all saved pokemon. (via a get)
+// Returns whether the Wilderness Service is done loading (via a get)
+// Returns error from Wilderness Service
+// On initialization loads in all pokemon
 @Component({
   selector: 'app-wilderness',
   templateUrl: './wilderness.page.html',
@@ -9,6 +14,8 @@ import { WildernessService } from 'src/app/services/wilderness.service';
 })
 export class WildernessPage implements OnInit {
   
+  constructor(private readonly wildernessService: WildernessService) { }
+
   get pokemons(): Pokemon[] {
     return this.wildernessService.pokemons;
   }
@@ -21,10 +28,7 @@ export class WildernessPage implements OnInit {
     return this.wildernessService.error;
   }
 
-  constructor(private readonly wildernessService: WildernessService) { }
-
   ngOnInit(): void {
-    //run the findAllPokemons function -> fetch all pokemons from API
     this.wildernessService.findAllPokemons();
   }
 }

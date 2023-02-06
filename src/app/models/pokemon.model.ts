@@ -1,11 +1,7 @@
-// the model on how the data from pokemon API is structured
+// Pokemon interface model structure
 export interface Pokemon {
   id: string;
   name: string;
   url: string;
   img: string;
 }
-
-
-
-

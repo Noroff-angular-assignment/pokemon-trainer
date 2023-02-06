@@ -9,12 +9,12 @@ import { WildernessService } from './wilderness.service';
 
 const { APIKey, APITrainers } = environment;
 
-// this is the service for handling the catch/favourite button at each pokemon
+// This service handles the favourite button for each individual pokemon.
 @Injectable({
   providedIn: 'root'
 })
 export class FavouriteService {
-  // boolean to determine if the functionallity is active or not
+  // Noolean to determine whether the functionallity is active or not.
   private _loading: boolean = false;
 
   constructor(
@@ -26,7 +26,8 @@ export class FavouriteService {
   get loading():boolean {
     return this._loading;
   }
-  //toggle between add or remove the given pokemon from the trainers favourite list
+
+  // Toggles between adding or removing the given pokemon from the trainers favourite list
   public toggleFavourite(pokemonId: string): Observable<Trainer> {
     if(!this.trainerService.trainer) {
       throw new Error("Trainer doesn't exist!")
@@ -38,14 +39,16 @@ export class FavouriteService {
     if(!pokemon) {
       throw new Error("No pokemon with id: " + pokemonId);
     }
-    //determine if the pokemon is already in the favourite list
-    // if yes -> remove and if no -> add to the favourite list
+
+    // Determine if the pokemon is already in the favourite list.
+    // If yes -> remove and if not -> add to the favourite list.
     if(this.trainerService.inFavourites(pokemonId)) {
       this.trainerService.removeFavourite(pokemonId)
     } else {
       this.trainerService.addFavourite(pokemon)
     }
-    //the standard header to http client request
+    
+    // The standard header to http client request
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'X-API-Key': APIKey
@@ -53,7 +56,7 @@ export class FavouriteService {
 
     this._loading = true;
 
-    // patch the favourite list at the active trainer on the API database
+    // Patch the favourite list of the active trainer in the API database
     return this.http.patch<Trainer>(`${APITrainers}/${trainer.id}`, {
       favourites: [...trainer.favourites]
     }, {

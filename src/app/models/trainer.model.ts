@@ -1,4 +1,4 @@
-// the model on how the data from trainer is structured
+// Trainer interface model structure
 import { Pokemon } from "./pokemon.model";
 
 export interface Trainer {

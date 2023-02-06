@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { TrainerService } from 'src/app/services/trainer.service';
 
+// Checks if trainer has been set in Trainer Service (and isn't null)
+// If so, redirect to wilderness (pokemon catalogue).
+// Also redirects when user login has been handled.
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
@@ -21,7 +25,6 @@ export class LandingPage implements OnInit {
   }
 
   handleLogin(): void {
-    // when login -> redirect to wilderness
     this.router.navigateByUrl("/wilderness");
   }
 }

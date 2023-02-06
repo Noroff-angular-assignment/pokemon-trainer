@@ -3,6 +3,8 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 import { Observable } from 'rxjs';
 import { TrainerService } from '../services/trainer.service';
 
+// Auth guard responsible for redirecting trainers to the
+// landing page if they aren't allocated in the local or session storage.
 @Injectable({
   providedIn: 'root'
 })

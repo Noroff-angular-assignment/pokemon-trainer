@@ -6,10 +6,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { WildernessPage } from './pages/wilderness/wilderness.page';
 
 
-//defining the Angular routing
-// landing page is the trainer login page
-// wilderness page is the pokemon catalogue page
-// trainer page is for the trainer list caught pokemon
+// Defines the Angular routing.
+// Landing page is the trainer login page.
+// Wilderness page is the pokemon catalogue page.
+// Trainer page is for the trainer list caught pokemon.
+// Also indicates if Auth Guard canActivate on wilderness and trainer page.
 const routes: Routes = [
   {
     path: "",
