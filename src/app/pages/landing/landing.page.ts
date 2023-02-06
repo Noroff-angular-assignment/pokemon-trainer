@@ -15,11 +15,7 @@ export class LandingPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.checkIfLoggedIn()
-  }
-
-  checkIfLoggedIn(): void {
-    if(this.trainerService.trainer){
+    if(this.trainerService.trainer && this.trainerService.trainer !== null){
       this.router.navigateByUrl("/wilderness");
     }
   }

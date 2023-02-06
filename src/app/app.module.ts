@@ -12,6 +12,7 @@ import { WildernessPage } from './pages/wilderness/wilderness.page';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FavouriteButtonComponent } from './components/favourite-button/favourit
     PokemonListComponent,
     PokemonListItemComponent,
     FavouriteButtonComponent,
+    LogoutButtonComponent,
   ],
   imports: [
     BrowserModule,

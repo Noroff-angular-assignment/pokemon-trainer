@@ -1,8 +1,9 @@
 <nav
   class="flex justify-between items-center p-8 sticky top-0 w-full z-50 backdrop-filter backdrop-blur-lg">
-  <span class="font-pokefont text-yellow-500 2xl:">
-  <img class="mx-auto h-8" src="/assets/pokemonlogo.png">
-  Trainer</span>
+  <span class="font-pokefont text-yellow-500 text-center">
+    <img class="mx-auto h-8" src="/assets/pokemonlogo.png">Trainer
+  </span>
+  <span class="text-right">
   <ng-container *ngIf="trainer !== undefined ">
     <ul class="flex">
       <li *ngIf="route !== '/wilderness'" class="px-4 text-yellow-500 text-5xl hover:bg-blue-300 rounded-2xl font-pokefont">
@@ -13,4 +14,6 @@
       </li>
     </ul>
   </ng-container>
+  <app-logout-button></app-logout-button>
+  </span>
 </nav>

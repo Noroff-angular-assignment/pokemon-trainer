@@ -12,6 +12,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
 export class LoginFormComponent {
 
   public loading: boolean = false;
+  public failedLogin: boolean = false;
 
   @Output() login : EventEmitter<void> = new EventEmitter();
 
@@ -21,21 +22,22 @@ export class LoginFormComponent {
     ) {   }
 
     public loginSubmit(loginForm: NgForm): void {
-      console.log("Value:"+loginForm.value)
+      if(loginForm.value.trainername !== ""){
+        this.loading = true
+        const { trainername } = loginForm.value;
 
-      this.loading = true
-      const { trainername } = loginForm.value;
-
-      this.loginService.login(trainername)
-        .subscribe({
-          next: (trainer: Trainer) => {
-            this.loading = false
-            this.trainerService.trainer = trainer;
-            this.login.emit();
-          },
-          error: () => {
-          }
-        })
-
+        this.loginService.login(trainername)
+          .subscribe({
+            next: (trainer: Trainer) => {
+              this.loading = false
+              this.trainerService.trainer = trainer;
+              this.login.emit();
+            },
+            error: () => {
+            }
+          })
+      } else {
+        this.failedLogin = true;
+      }
     }
 }

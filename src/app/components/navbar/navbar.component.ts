@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Trainer } from 'src/app/models/trainer.model';
 import { TrainerService } from 'src/app/services/trainer.service';
+import { LogoutButtonComponent } from '../logout-button/logout-button.component';
 
 @Component({
   selector: 'app-navbar',
