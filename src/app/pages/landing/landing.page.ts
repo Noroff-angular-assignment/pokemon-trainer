@@ -25,6 +25,7 @@ export class LandingPage implements OnInit {
   }
 
   handleLogin(): void {
+    // when login -> redirect to wilderness
     this.router.navigateByUrl("/wilderness");
   }
 }

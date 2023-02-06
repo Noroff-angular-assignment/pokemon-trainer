@@ -5,6 +5,11 @@ import { TrainerPage } from './pages/trainer/trainer.page';
 import { AuthGuard } from './guards/auth.guard';
 import { WildernessPage } from './pages/wilderness/wilderness.page';
 
+
+//defining the Angular routing
+// landing page is the trainer login page
+// wilderness page is the pokemon catalogue page
+// trainer page is for the trainer list caught pokemon
 const routes: Routes = [
   {
     path: "",
