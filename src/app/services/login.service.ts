@@ -27,7 +27,7 @@ export class LoginService {
   }
 
   private checkTrainername(trainername: string): Observable<Trainer | undefined> {
-    return this.http.get<Trainer[]>(`${APITrainers}?username=${trainername}`)
+    return this.http.get<Trainer[]>(`${APITrainers}?trainername=${trainername}`)
     .pipe(
       map((response: Trainer[]) => response.pop())
     )

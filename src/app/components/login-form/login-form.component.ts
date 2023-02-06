@@ -21,6 +21,8 @@ export class LoginFormComponent {
     ) {   }
 
     public loginSubmit(loginForm: NgForm): void {
+      console.log("Value:"+loginForm.value)
+
       this.loading = true
       const { trainername } = loginForm.value;
 
@@ -32,9 +34,8 @@ export class LoginFormComponent {
             this.login.emit();
           },
           error: () => {
-
           }
         })
-    }
 
+    }
 }
