@@ -9,7 +9,30 @@ import { Pokemon } from 'src/app/models/pokemon.model';
 export class PokemonListComponent implements OnInit {
   
   @Input() pokemons: Pokemon[] = [];
-  
+  private _pageNumber = 1;
+
+  get pageNumber() {
+    return this._pageNumber;
+  }
+
+  constructor(
+    ) {   }
+
+    onPrevClick(): void {
+      if (this._pageNumber===1) {
+        return;
+      }
+      this._pageNumber--
+    }
+
+    onNextClick(): void {
+      if (this._pageNumber*24>this.pokemons.length) {
+        this._pageNumber = 1;
+        return;
+      }
+      this._pageNumber++
+    }
+
   ngOnInit(): void {
 
   }

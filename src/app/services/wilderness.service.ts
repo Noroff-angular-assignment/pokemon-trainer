@@ -31,11 +31,12 @@ export class WildernessService {
 
   public findAllPokemons(): void {
     if (this._pokemon.length > 0 || this._loading) {
+      console.log("DONE")
       return;
     }
     this._loading = true;
     this.http
-      .get<Pokemon[]>(`${APIPokemon}pokemon?limit=240&offset=0`)
+      .get<Pokemon[]>(`${APIPokemon}pokemon?limit=1008&offset=0`)
       .pipe(
         finalize(() => {
           this._loading = false;
